@@ -3,7 +3,7 @@ package aed;
 public class Agenda {
 
     public Agenda(Fecha fechaActual) {
-        // Implementar
+        
     }
 
     public void agregarRecordatorio(Recordatorio recordatorio) {
