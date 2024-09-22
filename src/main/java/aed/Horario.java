@@ -7,6 +7,10 @@ public class Horario {
         this.hora = hora;
         this.minutos = minutos;
     }
+    public Horario(Horario horario) {
+        this.hora = horario.hora();
+        this.minutos = horario.minutos();
+    }
 
     public int hora() {
         

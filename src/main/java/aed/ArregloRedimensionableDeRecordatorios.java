@@ -1,39 +1,72 @@
 package aed;
 
 class ArregloRedimensionableDeRecordatorios {
-
+    private Recordatorio[] listaRecordatorios;
+    
     public ArregloRedimensionableDeRecordatorios() {
-        // Implementar
+        this.listaRecordatorios = new Recordatorio[5];
     }
 
+    // public ArregloRedimensionableDeRecordatorios(ArregloRedimensionableDeRecordatorios lista) {
+    //     this.listaRecordatorios = new Recordatorio[lista.listaRecordatorios.length*2];
+    //     for (int i = 0; i < lista.listaRecordatorios.length; i++) {
+    //         this.listaRecordatorios[i] = lista.listaRecordatorios[i];
+    //     }
+    // }
+
     public int longitud() {
-        // Implementar
-        return -1;
+        int contador = 0;
+        for (int i = 0; i < this.listaRecordatorios.length; i++) {
+            if (this.listaRecordatorios[i] != null) {
+                contador++;
+            }
+        }
+        
+        return contador;
     }
 
     public void agregarAtras(Recordatorio i) {
-        // Implementar
+        if (longitud() == this.listaRecordatorios.length) {
+            expandirLista(this.listaRecordatorios);
+        }
+        this.listaRecordatorios[longitud()] = i;
+    }
+
+    private void expandirLista(Recordatorio[] listaRecordatorios) {
+        this.listaRecordatorios = new Recordatorio[listaRecordatorios.length*2];
+        for (int i = 0; i < listaRecordatorios.length; i++) {
+            this.listaRecordatorios[i] = this.listaRecordatorios[i];
+        }
+
     }
 
     public Recordatorio obtener(int i) {
-        // Implementar
-        return null;
+        Recordatorio recordatorioDevuelto = new Recordatorio(new String(listaRecordatorios[i].mensaje()), new Fecha(listaRecordatorios[i].fecha()), new Horario(listaRecordatorios[i].horario()));
+        //return this.listaRecordatorios[i];
+       // return new Recordatorio(listaRecordatorios[i]);
+       return recordatorioDevuelto;
     }
 
     public void quitarAtras() {
-        // Implementar
+        this.listaRecordatorios[longitud()] = null;
     }
 
     public void modificarPosicion(int indice, Recordatorio valor) {
-        // Implementar
+        this.listaRecordatorios[indice] = new Recordatorio(valor);
     }
 
     public ArregloRedimensionableDeRecordatorios(ArregloRedimensionableDeRecordatorios vector) {
-        // Implementar
+        this.listaRecordatorios = new Recordatorio[vector.listaRecordatorios.length*2];
+        for (int i = 0; i < vector.listaRecordatorios.length; i++) {
+            this.listaRecordatorios[i] = vector.listaRecordatorios[i];
+        }
     }
 
     public ArregloRedimensionableDeRecordatorios copiar() {
-        // Implementar
-        return null;
+        ArregloRedimensionableDeRecordatorios listaNueva = new ArregloRedimensionableDeRecordatorios();
+        for (int i = 0; i < this.listaRecordatorios.length; i++) {
+            listaNueva.listaRecordatorios[i] = this.listaRecordatorios[i];
+        }
+        return listaNueva;
     }
 }
