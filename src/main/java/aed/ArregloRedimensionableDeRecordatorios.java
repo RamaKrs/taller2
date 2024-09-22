@@ -7,13 +7,6 @@ class ArregloRedimensionableDeRecordatorios {
         this.listaRecordatorios = new Recordatorio[5];
     }
 
-    // public ArregloRedimensionableDeRecordatorios(ArregloRedimensionableDeRecordatorios lista) {
-    //     this.listaRecordatorios = new Recordatorio[lista.listaRecordatorios.length*2];
-    //     for (int i = 0; i < lista.listaRecordatorios.length; i++) {
-    //         this.listaRecordatorios[i] = lista.listaRecordatorios[i];
-    //     }
-    // }
-
     public int longitud() {
         int contador = 0;
         for (int i = 0; i < this.listaRecordatorios.length; i++) {
@@ -41,14 +34,14 @@ class ArregloRedimensionableDeRecordatorios {
     }
 
     public Recordatorio obtener(int i) {
-        Recordatorio recordatorioDevuelto = new Recordatorio(new String(listaRecordatorios[i].mensaje()), new Fecha(listaRecordatorios[i].fecha()), new Horario(listaRecordatorios[i].horario()));
+        //Recordatorio recordatorioDevuelto = new Recordatorio(new String(listaRecordatorios[i].mensaje()), new Fecha(listaRecordatorios[i].fecha()), new Horario(listaRecordatorios[i].horario()));
         //return this.listaRecordatorios[i];
-       // return new Recordatorio(listaRecordatorios[i]);
-       return recordatorioDevuelto;
+        return new Recordatorio(listaRecordatorios[i]);
+       //return recordatorioDevuelto;
     }
 
     public void quitarAtras() {
-        this.listaRecordatorios[longitud()] = null;
+        this.listaRecordatorios[longitud()-1] = null;
     }
 
     public void modificarPosicion(int indice, Recordatorio valor) {

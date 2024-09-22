@@ -33,8 +33,10 @@ public class Horario {
 
     @Override
     public boolean equals(Object otro) {
-        
-        return otro.getClass() == this.getClass() &&  ((Horario) otro).hora == this.hora && ((Horario) otro).minutos == this.minutos;
-    }
+        return otro.getClass() == this.getClass() &&
+        ((Horario) otro).hora == this.hora &&
+        ((Horario) otro).minutos == this.minutos;
 
+
+    }
 }

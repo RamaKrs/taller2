@@ -144,7 +144,6 @@ public class AgendaTests {
     @Test
     void crearAgenda() {
         Agenda a = new Agenda(new Fecha(10, 05));
-
         assertEquals(new Fecha(10, 05), a.fechaActual());
 
     }

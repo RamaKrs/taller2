@@ -11,7 +11,7 @@ public class Recordatorio {
         this.horario = new Horario(horario);
     }
     public Recordatorio(Recordatorio recordatorio) {
-        this.mensaje = recordatorio.mensaje();
+        this.mensaje = new String(recordatorio.mensaje());
         this.fecha = new Fecha(recordatorio.fecha());
         this.horario = new Horario(recordatorio.horario());
     }
@@ -35,7 +35,11 @@ public class Recordatorio {
 
     @Override
     public boolean equals(Object otro) {
-        return (otro.getClass() == this.getClass() && ((Recordatorio) otro).mensaje == this.mensaje && ((Recordatorio) otro).fecha == this.fecha && ((Recordatorio) otro).horario == this.horario);
-    }
+        return (otro.getClass() == this.getClass()    && 
+        ((Recordatorio) otro).mensaje.equals(this.mensaje) &&
+        ((Recordatorio) otro).fecha.equals(this.fecha)     && 
+        ((Recordatorio) otro).horario.equals(this.horario));
+}
+    
 
 }
