@@ -22,7 +22,7 @@ class ArregloRedimensionableDeRecordatorios {
         if (longitud() == this.listaRecordatorios.length) {
             expandirLista(this.listaRecordatorios);
         }
-        this.listaRecordatorios[longitud()] = i;
+        this.listaRecordatorios[longitud()] = new Recordatorio(i);
     }
 
     private void expandirLista(Recordatorio[] listaRecordatorios) {
