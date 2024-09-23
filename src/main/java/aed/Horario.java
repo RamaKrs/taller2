@@ -23,7 +23,7 @@ public class Horario {
 
     @Override
     public String toString() {
-        String minutosCorregidos;
+        // String minutosCorregidos;
         // if (minutos < 10) {
         //     minutosCorregidos = "0"+this.minutos();
         //     return hora+":"+minutosCorregidos;
